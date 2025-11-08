@@ -42,3 +42,15 @@ Practical 9 Assume that you have a seven-slot closed hash table (the slots are n
 Practical 10 Write a C program (name it "filecopy. c") that copies the contents of one file to a destination file. This program will read data from one file and copy them to another. The first input that the program will need is the names of the two files: input file ("input.txt") and output file ("output.txt"). Once the two file names have been obtained, the program must open the input file and create and open the output file.
 
 
+## ITCP–Lab_C_Practicals:
+
+1. [Lab_01 : Linux Commands](https://github.com/sarojtembhare10-sudo/DSPD/tree/4696d888a15226358185c5f31c892530b252bb6e/DSPD/Lab%201)
+2. [Lab_02 : Arithmatic and Conditional Opertaors](https://github.com/sarojtembhare10-sudo/DSPD/tree/4696d888a15226358185c5f31c892530b252bb6e/DSPD/Lab%202)
+3. [Lab_03 : Conditional and Unconditional Statements](https://github.com/sarojtembhare10-sudo/DSPD/tree/4696d888a15226358185c5f31c892530b252bb6e/DSPD/Lab%203)
+4. [Lab_04 : Looping Statements](https://github.com/sarojtembhare10-sudo/DSPD/tree/4696d888a15226358185c5f31c892530b252bb6e/DSPD/Lab%204)
+5. [Lab_05 : Function and Recursion](https://github.com/sarojtembhare10-sudo/DSPD/tree/4696d888a15226358185c5f31c892530b252bb6e/DSPD/Lab%205)
+6. [Lab_06 : 1D Array](https://github.com/sarojtembhare10-sudo/DSPD/tree/4696d888a15226358185c5f31c892530b252bb6e/DSPD/Lab%206)
+7. [Lab_07 : 2D Array](https://github.com/sarojtembhare10-sudo/DSPD/tree/4696d888a15226358185c5f31c892530b252bb6e/DSPD/Lab%206)
+8. [Lab_08 : Strings and Pointers](https://github.com/sarojtembhare10-sudo/DSPD/tree/4696d888a15226358185c5f31c892530b252bb6e/DSPD/Lab%208)
+9. [Lab_09 : Structure](https://github.com/sarojtembhare10-sudo/DSPD/tree/4696d888a15226358185c5f31c892530b252bb6e/DSPD/Lab%209)
+10. [Lab_10 : File](https://github.com/sarojtembhare10-sudo/DSPD/tree/4696d888a15226358185c5f31c892530b252bb6e/DSPD/Lab%2010)
