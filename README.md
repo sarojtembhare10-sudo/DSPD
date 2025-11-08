@@ -40,3 +40,5 @@ Practical 8 Write a program to implement Kruskal’s Algorithm in order to find 
 Practical 9 Assume that you have a seven-slot closed hash table (the slots are numbered o through 6) Write program to final hash table that would result if you used the hash function h(k) - k mod 7.
 
 Practical 10 Write a C program (name it "filecopy. c") that copies the contents of one file to a destination file. This program will read data from one file and copy them to another. The first input that the program will need is the names of the two files: input file ("input.txt") and output file ("output.txt"). Once the two file names have been obtained, the program must open the input file and create and open the output file.
+
+DSPD/Lab 1
