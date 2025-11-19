@@ -1,69 +1,67 @@
 #include <stdio.h>
-int parent[30];
 
-int find(int i) {
-    while (parent[i] != i)
-        i = parent[i];
-    return i;
+#define INF 9999
+#define MAX 20
+
+int findParent(int v, int parent[]) {
+    if (parent[v] == v)
+        return v;
+    return findParent(parent[v], parent);
 }
 
-void unionSets(int i, int j) {
-    int a = find(i);
-    int b = find(j);
+void unionSet(int u, int v, int parent[]) {
+    int a = findParent(u, parent);
+    int b = findParent(v, parent);
     parent[a] = b;
 }
-int main() {
-    int n, edges;
-    int u, v, w;
-    int cost = 0, count = 0;
 
+int main() {
+    int n;
     printf("Enter number of vertices: ");
     scanf("%d", &n);
 
-    printf("Enter number of edges: ");
-    scanf("%d", &edges);
+    int cost[MAX][MAX];
 
-    int graph[edges][3];
-
-    printf("Enter each edge with weight (u v w):\n");
-    for (int i = 0; i < edges; i++)
-        scanf("%d %d %d", &graph[i][0], &graph[i][1], &graph[i][2]);
-    for (int i = 0; i < n; i++)
-        parent[i] = i;
-    for (int i = 0; i < edges - 1; i++)
-        for (int j = 0; j < edges - i - 1; j++)
-            if (graph[j][2] > graph[j + 1][2]) {
-                int temp0 = graph[j][0];
-                int temp1 = graph[j][1];
-                int temp2 = graph[j][2];
-                graph[j][0] = graph[j + 1][0];
-                graph[j][1] = graph[j + 1][1];
-                graph[j][2] = graph[j + 1][2];
-                graph[j + 1][0] = temp0;
-                graph[j + 1][1] = temp1;
-                graph[j + 1][2] = temp2;
-            }
-
-    printf("\nEdges in the Minimum Spanning Tree:\n");
-
-    for (int i = 0; i < edges; i++) {
-        u = graph[i][0];
-        v = graph[i][1];
-        w = graph[i][2];
-
-        int setU = find(u);
-        int setV = find(v);
-
-        if (setU != setV) {
-            printf("%d - %d : %d\n", u, v, w);
-            cost += w;
-            unionSets(setU, setV);
-            count++;
-            if (count == n - 1)
-                break;
+    printf("Enter the cost adjacency matrix (enter 0 if no edge):\n");
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= n; j++) {
+            scanf("%d", &cost[i][j]);
+            if (cost[i][j] == 0)
+                cost[i][j] = INF;
         }
     }
 
-    printf("\nTotal cost of Minimum Spanning Tree = %d\n", cost);
+    int parent[MAX];
+    for (int i = 1; i <= n; i++)
+        parent[i] = i;
+
+    int edgeCount = 0, total = 0;
+
+    printf("\nEdges in the Minimum Spanning Tree:\n");
+
+    while (edgeCount < n - 1) {
+        int min = INF, a = -1, b = -1;
+
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++) {
+                if (findParent(i, parent) != findParent(j, parent) &&
+                    cost[i][j] < min) {
+                    min = cost[i][j];
+                    a = i;
+                    b = j;
+                }
+            }
+        }
+
+        if (a != -1 && b != -1) {
+            printf("%d -- %d == %d\n", a, b, min);
+            total += min;
+            unionSet(a, b, parent);
+            edgeCount++;
+            cost[a][b] = cost[b][a] = INF;
+        }
+    }
+
+    printf("\nTotal weight of MST = %d\n", total);
     return 0;
 }
