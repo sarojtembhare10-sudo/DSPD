@@ -1,0 +1,3 @@
+Hello, this is a sample input file.
+This text will be copied to output.txt by the C program.
+C programming file handling is easy.
