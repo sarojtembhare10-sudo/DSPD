@@ -21,3 +21,4 @@ int main()
     printf("Sum of elements at even positions: %d\n", evenSum);
     return 0;
 }
+
